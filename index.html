@@ -5,15 +5,16 @@
         <meta name="keyword" content="技术"/>
         <meta name="description" content="电脑技术，编程交流"/>
         <title>音迷空间</title>
+        <link rel="shortcut icon" href="picture/tubiao1.gif" type="image/x-icon"/>
         <link rel="stylesheet" type="text/css" href="layout.css"/>
         <link rel="stylesheet" type="text/css" href="character.css"/>
     </head> 
-    <body style="background-image: url('picture/background.jpg');background-repeat: no-repeat;background-size:100% 100%;">
+    <body style="background-image: url('picture/background.jpg');background-size:100% 100%;">
         <!--头部布局-->
         <header>
             <div id="header_1">
                <p><img src="picture/tubiao1.gif" width="35" height="35" alt="error" style="vertical-align:middle"/>
-                <span class="character_1">FUXXIAOPAGM.COM</span></p>
+                <span class="character_1">YINMI.COM</span></p>
             </div>
             <div id="header_2">
               <div class="picture_1">
@@ -36,10 +37,10 @@
                   <div class="picture_2"><img src="picture/web.gif" width="30" height="30" alt="error" /></div>
                   <div class="character_2">我的网页</div>
               </div>
-              <div id="search_box">
+              <form method="post" action="search.php" id="search_box">
                   <img src="picture/search.gif" width="20" height="20" alt="error" style="padding-top:5px"/>
                   <input type="text" name="search"  placeholder="搜索" class="textarea_style"/>
-              </div>
+              </form>
             </div>
         </header>
         <!--内容布局-->
@@ -51,10 +52,10 @@
                     <P class="p"><img src="picture/sunrise.jpg" width="310"height="160"alt="error"></P>
                     <p class="character_content"> 摄像：白净，天使的圈套<br/>定格拍摄：萝卜，约定下一个<br/>剪辑：萝卜<br/>配乐：乐和</p>
                     <hr class="border_style"/>
-                    <div class="comment_box">
+                    <form action="" method="post" class="comment_box">
                         <input class="comment_input" name="comment"/>
                         <div style="float:right;"><img src="picture/comment.png" width="35" height="35"/></div>
-                    </div>
+                    </form>
                 </div>
                 <div class="box_4">
                     <p class="character_title">大连星海烟花表演 2018</p>
@@ -62,10 +63,10 @@
                     <P class="p"><img src="picture/fireworks.jpg" width="310"height="160"alt="error"></P>
                     <p class="character_content"> 摄像：看我的世界，天使的圈套<br/>定格拍摄：萝卜，约定下一个<br/>剪辑：萝卜<br/>配乐：乐和</p>
                     <hr class="border_style"/>
-                    <div class="comment_box">
+                    <form method="post" action="" class="comment_box">
                         <input class="comment_input" name="comment"/>
                         <div style="float:right;"><img src="picture/comment.png" width="35" height="35"/></div>
-                    </div>
+                    </form>
                 </div>
                 <div class="box_5">
                    <div class="page_number">①②③>>laster</div> 
@@ -154,9 +155,25 @@
             </div>
         </div>
         <footer>
-         <p class="foot">
-            练习使用，违规见谅
-         </p>
+            <!-- 意见提交-->
+            <h1>留言</h1>
+            <form action="suggestion.php" method="post" name="suggestion"id="suggestion">
+             <input type="text" name="name" id="name"placeholder="名称"/>
+             <textarea rows="10" cols="40"name="suggest" id="suggest"placeholder="留言"></textarea>
+             <input type="text" name="email"placeholder="电子邮件"id="email"/>
+             <input type="text" name="qq" placeholder="qq"id="qq"/>
+             <input type="submit" value="提交"onclick="socialContact()"id="submit"/>
+             </form>
+            <p>
+             Designed and developed by YINMI.<br/>
+             Copyright © 2018 yinmihuang@qq.com All Rights Reserved.
+            </p>
         </footer>
+    <script type="text/javascript">
+        function socialContact() {
+            document.forms["suggestion"]["name"].type="submit";
+
+        }
+    </script>
     </body>
 </html>
